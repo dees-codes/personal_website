@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Typewriter effect
+  const text = "Welcome to my personal website";
+  const typewriterElement = document.querySelector('.typewriter');
+  let i = 0;
+  
+  function typeWriter() {
+    if (i < text.length) {
+      typewriterElement.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 100);
+    }
+  }
+  
+  typeWriter();
+
   // Navbar scroll effect
   const navbar = document.querySelector('.navbar');
   let lastScrollY = window.scrollY;
